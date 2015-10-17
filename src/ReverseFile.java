@@ -38,6 +38,7 @@ public class ReverseFile {
 				words.remove(0);
 			}
 			
+			out.println();
 			lines.remove(0);
 			tempin.close();
 		}
