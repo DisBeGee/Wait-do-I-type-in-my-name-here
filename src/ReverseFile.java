@@ -14,7 +14,7 @@ public class ReverseFile {
 		PrintWriter out = new PrintWriter(output);
 		
 		while (in.hasNext()) {
-			String inLine = in.next();
+			String inLine = in.nextLine();
 			lines.add(inLine);
 		}
 		
@@ -27,8 +27,11 @@ public class ReverseFile {
 			
 			while (tempin.hasNext()) {
 				words.add(tempin.next());
+				words.add(" ");
 			}
+			
 			Collections.reverse(words);
+			words.remove(0); //Removes space at the beginning
 			
 			while (!words.isEmpty()) {
 				out.print(words.get(0));

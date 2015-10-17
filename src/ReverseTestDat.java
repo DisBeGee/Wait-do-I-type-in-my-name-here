@@ -16,7 +16,7 @@ public class ReverseTestDat {
 		File output = new File("output.txt");
 		
 		PrintWriter inPrint = new PrintWriter(input);
-		inPrint.println("“Lorem ipsum dolor sit amet");
+		inPrint.println("Lorem ipsum dolor sit amet");
 		inPrint.close();
 		
 		ReverseFile.reverse(input, output);
