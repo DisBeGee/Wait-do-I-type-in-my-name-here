@@ -13,15 +13,15 @@ public class ReverseFile {
 		Scanner in = new Scanner(input);
 		PrintWriter out = new PrintWriter(output);
 		
-		while (in.hasNext()) {
-			String inLine = in.nextLine();
+		while (in.hasNextLine()) {
+			String inLine = "" + in.nextLine();
 			lines.add(inLine);
 		}
 		
 		Collections.reverse(lines);
 		
 		while (!lines.isEmpty()) {
-			String temp = lines.get(0);
+			String temp = "" + lines.get(0);
 			ArrayList<String> words = new ArrayList<String>();
 			Scanner tempin = new Scanner(temp);
 			
@@ -31,10 +31,13 @@ public class ReverseFile {
 			}
 			
 			Collections.reverse(words);
-			words.remove(0); //Removes space at the beginning
+			
+			if (!words.isEmpty()) {
+				words.remove(0); //Removes space at the beginning
+			}
 			
 			while (!words.isEmpty()) {
-				out.print(words.get(0));
+				out.print("" + words.get(0));
 				words.remove(0);
 			}
 			
